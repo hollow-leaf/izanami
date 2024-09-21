@@ -51,6 +51,9 @@ function getChainConfig (chain: keyof typeof chainIds): NetworkUserConfig {
     case "neroTestnet":
       jsonRpcUrl = "https://testnet.nerochain.io"
       break
+    case 'flowTestnet':
+      jsonRpcUrl = "https://testnet.evm.nodes.onflow.org"
+      break
     default:
       jsonRpcUrl = `https://${chain}.infura.io/v3/${infuraApiKey}`
   }

@@ -78,7 +78,7 @@ task("deploy:name", "Deploy contract")
       try {
         await hre.run("verify:verify", {
           address: deployContract.address,
-          constructorArguments: [],
+          constructorArguments: [signer.address],
           contract: "contracts/Reputation.sol:Reputation",
         })
       } catch (e) {

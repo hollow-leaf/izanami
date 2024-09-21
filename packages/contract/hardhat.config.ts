@@ -51,6 +51,9 @@ function getChainConfig (chain: keyof typeof chainIds): NetworkUserConfig {
     case "neroTestnet":
       jsonRpcUrl = "https://testnet.nerochain.io"
       break
+    case 'flowTestnet':
+      jsonRpcUrl = "https://testnet.evm.nodes.onflow.org"
+      break
     default:
       jsonRpcUrl = `https://${chain}.infura.io/v3/${infuraApiKey}`
   }
@@ -75,6 +78,7 @@ const config: HardhatUserConfig = {
     mainnet: getChainConfig("mainnet"),
     lineaSepolia: getChainConfig("lineaSepolia"),
     scrollSepolia: getChainConfig("scrollSepolia"),
+    flowTestnet: getChainConfig("flowTestnet"),
     neroTestnet: getChainConfig("neroTestnet"),
   },
   paths: {
@@ -114,6 +118,7 @@ const config: HardhatUserConfig = {
       cardona: process.env.POLYGONSCAN_API_KEY || "",
       mantleSepolia: "NO_API_KEY",
       baseSepolia: process.env.BASESCAN_API_KEY || "",
+      flowTestnet: "NO_API_KEY",
       opAvail: "NO_API_KEY",
       lineaSepolia: process.env.LINEASCAN_API_KEY || "",
       scrollSepolia: process.env.SCROLLSCAN_API_KEY || "",
@@ -142,6 +147,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://testnetscan.nerochain.io/api",
           browserURL: "https://testnetscan.nerochain.io/"
+        }
+      },
+      {
+        network: "flowTestnet",
+        chainId: 545,
+        urls: {
+          apiURL: "https://evm-testnet.flowscan.io/api",
+          browserURL: "https://evm-testnet.flowscan.io/"
         }
       },
     ]

@@ -59,16 +59,16 @@ task("deploy:name", "Deploy contract")
   .setAction(async ({ verify }, hre) => {
     await hre.run("compile")
     const [signer]: any = await hre.ethers.getSigners()
-    const contractFactory = await hre.ethers.getContractFactory("Reputation")
+    const contractFactory = await hre.ethers.getContractFactory("Reputation712")
     // if you mint in constructor, you need to add value in deploy function
-    const deployContract: any = await contractFactory.connect(signer).deploy(signer.address)
+    const deployContract: any = await contractFactory.connect(signer).deploy()
     console.log(`Reputation.sol deployed to ${deployContract.address}`)
 
     const address = {
       main: deployContract.address,
     }
     const addressData = JSON.stringify(address)
-    writeFileSync(`scripts/address/${hre.network.name}/`, "Reputation.json", addressData)
+    writeFileSync(`scripts/address/${hre.network.name}/`, "Reputation712.json", addressData)
 
     await deployContract.deployed()
 
@@ -79,7 +79,7 @@ task("deploy:name", "Deploy contract")
         await hre.run("verify:verify", {
           address: deployContract.address,
           constructorArguments: [],
-          contract: "contracts/Reputation.sol:Reputation",
+          contract: "contracts/Reputation712.sol:Reputation712",
         })
       } catch (e) {
         console.log(e)

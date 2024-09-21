@@ -70,4 +70,8 @@ contract Reputation712 {
 
         emit ReputationUpdated(msg.sender, target, reputationAdd[target], reputationSub[target]);
     }
+
+    function getReputation(address target) external view returns (int, int) {
+        return (reputationAdd[target], reputationSub[target]);
+    }
 }

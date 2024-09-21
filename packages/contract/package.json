@@ -1,0 +1,38 @@
+{
+  "name": "contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "hardhat compile",
+    "deploy:token": "hardhat deploy:token",
+    "deploy:vote": "hardhat deploy:vote",
+    "verify": "hardhat verify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "2.0.2",
+    "@nomicfoundation/hardhat-verify": "^2.0.4",
+    "@nomiclabs/hardhat-ethers": "2.2.3",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.11.19",
+    "dotenv": "16.3.1",
+    "ethers": "^5.0.0",
+    "hardhat": "2.19.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "@pcd/util": "^0.5.3",
+    "@pcd/zk-eddsa-event-ticket-pcd": "^0.6.4",
+    "@prb/math": "^4.0.2",
+    "js-sha256": "^0.11.0",
+    "viem": "2.x"
+  }
+}

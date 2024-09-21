@@ -50,7 +50,8 @@ export const update_address = new OpenAPIHono<any>().openapi(route, async (conte
   const raw = JSON.stringify({
     "address": "0xf3419771c2551f88a91Db61cB874347f05640172",
     "good": 100,
-    "bad": 15
+    "bad": 15,
+    "value": "good good"
   });
 
   const requestOptions = {

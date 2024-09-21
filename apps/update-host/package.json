@@ -8,6 +8,7 @@
     "@hono/node-server": "^1.12.1",
     "@hono/swagger-ui": "^0.4.0",
     "@hono/zod-openapi": "^0.15.3",
+    "ethers": "5.7.2",
     "hono": "^4.5.8",
     "sqlite3": "^5.1.7",
     "typeorm": "^0.3.20",

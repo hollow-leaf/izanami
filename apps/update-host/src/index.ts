@@ -25,7 +25,8 @@ app.use('*', cors({
 }))
   .get('/docs', swaggerUI({ url: openapi_documentation_route }))
   .use(prettyJSON())
-  .route('/', api)
+  app.route('/', api)
+
 
 const port = 8081
 console.log(`Server is running on port ${port}, open http://localhost:${port}/docs to see the documentation`)

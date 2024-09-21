@@ -19,6 +19,7 @@ const chainIds = {
   sepolia: 11155111,
   hardhat: 31337,
   mainnet: 1,
+  flowTestnet: 545,
   lineaSepolia: 59141,
   scrollSepolia: 534351,
   neroTestnet: 6660001,

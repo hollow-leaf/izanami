@@ -9,8 +9,10 @@
 </div>
 
 ### **ShowCase**
-- Website: [Website URL](https://)
-- Flow Testnet: [0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2]()
+- Website: [Izanami](https://izanami.pages.dev)
+- Flow Testnet: [0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2](https://evm-testnet.flowscan.io/address/0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2?tab=contract)
+- Chrome Extension: `pnpm run build --filter extension`
+- Phana Ai: https://wapo-testnet.phala.network/ipfs/QmW5ddBNgH6y6NCbgcKQDMDBvW2x2gyhutKBR1eVQEXq7A?key=710555c9bbad46e6
 
 ### **What is Izanami?**
 
@@ -37,7 +39,7 @@ Overall, Izanami provides a way for users to showcase multiple facets of their p
 - Helps users make informed decisions based on comprehensive reviews.
 
 ### **Deployed Contract**
-- Flow Testnet: [0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2](https://testnetscan.nerochain.io/address/0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2/contracts#address-tabs)
+- Flow Testnet: [0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2](https://evm-testnet.flowscan.io/address/0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2?tab=contract)
 
 ## **Using Izanami**
 

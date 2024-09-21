@@ -29,9 +29,6 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.1",
-    "@pcd/util": "^0.5.3",
-    "@pcd/zk-eddsa-event-ticket-pcd": "^0.6.4",
-    "@prb/math": "^4.0.2",
     "js-sha256": "^0.11.0",
     "viem": "2.x"
   }

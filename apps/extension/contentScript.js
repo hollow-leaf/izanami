@@ -65,7 +65,7 @@ async function insertSuspiciousTagWithStyle(tweetTextElement) {
 
     //const status = await getAddressStatus(ethereumAddress)
     // Modify the Ethereum address by adding '0x--' and insert "suspicious address!!" in bold and red color after the address
-    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} style="color: red;">${"0X" + ethereumAddress.slice(2)}</a>`
+    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} target="_blank" style="color: red;">${"0X" + ethereumAddress.slice(2)}</a>`
     const suspiciousTag = ' <strong style="color: red;">Suspicious Address!!</strong>';
 
     // Address found, insert "suspicious address!!" with red color and bold right after the Ethereum address
@@ -90,7 +90,7 @@ async function insertUncertainTagWithStyle(tweetTextElement) {
 
     //const status = await getAddressStatus(ethereumAddress)
     // Modify the Ethereum address by adding '0x--' and insert "suspicious address!!" in bold and red color after the address
-    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} style="color: gray;">${"0X" + ethereumAddress.slice(2)}</a>`
+    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} target="_blank" style="color: gray;">${"0X" + ethereumAddress.slice(2)}</a>`
     const suspiciousTag = ' <strong style="color: gray;">Uncertain Address?!</strong>';
 
     // Address found, insert "suspicious address!!" with red color and bold right after the Ethereum address
@@ -115,7 +115,7 @@ async function insertGoodTagWithStyle(tweetTextElement) {
 
     //const status = await getAddressStatus(ethereumAddress)
     // Modify the Ethereum address by adding '0x--' and insert "suspicious address!!" in bold and red color after the address
-    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} style="color: green;">${"0X" + ethereumAddress.slice(2)}</a>`
+    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} target="_blank" style="color: green;">${"0X" + ethereumAddress.slice(2)}</a>`
     const suspiciousTag = ' <a style="color: green;">Reliable Address<img src="https://develop.gen3-ui-v1.pages.dev/icons/FireIcon.svg"/></a>';
 
     // Address found, insert "suspicious address!!" with red color and bold right after the Ethereum address

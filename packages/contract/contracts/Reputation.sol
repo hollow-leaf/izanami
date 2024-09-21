@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-contract ReputationSystemWithVerification {
+contract Reputation {
     // Mapping to store the reputation score of each address
-    mapping(address => int) public reputation;
+    mapping(address => int) public reputationAdd;
+    mapping(address => int) public reputationSub;
 
     // Mapping to track whether an address has been rated by another address
     mapping(address => mapping(address => bool)) public hasRated;
@@ -12,7 +13,7 @@ contract ReputationSystemWithVerification {
     address public mediator;
 
     // Event for reputation updates
-    event ReputationUpdated(address indexed user, address indexed target, int score);
+    event ReputationUpdated(address indexed user, address indexed target, int scoreAdd, int scoreSub);
 
     // Event for rating verification
     event RatingVerified(address indexed user, address indexed target, int score, bytes32 messageHash);
@@ -56,10 +57,14 @@ contract ReputationSystemWithVerification {
         require(signer == mediator, "Invalid signature, not signed by mediator");
 
         // Update reputation
-        reputation[target] += score;
+        if (score == 1) {
+            reputationAdd[target]++;
+        } else {
+            reputationSub[target]++;
+        }
         hasRated[msg.sender][target] = true;
 
-        emit ReputationUpdated(msg.sender, target, reputation[target]);
+        emit ReputationUpdated(msg.sender, target, reputationAdd[target], reputationSub[target]);
     }
 
     // Helper function to get the Ethereum signed message hash

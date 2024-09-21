@@ -1,19 +1,18 @@
 <div align="center">
-  <a href="https://github.com/Phala-Network/ai-agent-template-redpill">
-    <h1>AI Agent Contract Template with RedPill</h1>
+  <a href="https://github.com/Phala-Network/ai-agent-contract-viem">
+    <h1>AI Agent Contract Template + Viem SDK</h1>
     <img height="320" src="./public/AI-Agent-Contract.jpg" />
     <br />
   </a>
-
   <p align="center">
     Host your AI Agent Contract on Phala's decentralized serverless cloud.
     <br />
-    <a href="https://github.com/Phala-Network/ai-agent-template-redpill"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Phala-Network/ai-agent-contract-viem"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://wapo-testnet.phala.network/ipfs/Qmc7EDq1X8rfYGGfHyXZ6xsmcSUWQcqsDoeRMfmvFujih3?key=51f265212c26086c&chatQuery=When%20did%20humans%20land%20on%20the%20moon">View Demo</a>
+    <a href="https://wapo-testnet.phala.network/ipfs/QmPQJD5zv3cYDRM25uGAVjLvXGNyQf9Vonz7rqkQB52Jae?key=b092532592cbd0cf&type=verify&data=signedByTEE&signature=0x27a9cd3e1aa3b238c8bdbc57d831f503b9af11ba2cc4875780c21ea8a14b471c098d11791709f6243001908bfe217644c6b3882a16903048e9e01e946b318c0d1b">View Demo</a>
     ·
-    <a href="https://github.com/Phala-Network/ai-agent-template-redpill/issues">Report Bug</a>
+    <a href="https://github.com/Phala-Network/ai-agent-contract-viem/issues">Report Bug</a>
     ·
     <a href="https://discord.gg/phala-network">Discord</a>
   </p>
@@ -28,7 +27,7 @@
   <img height="240" src="https://www.jlwranglerforums.com/forum/attachments/zoolander-gif.325299/">
 </div>
 
-The RedPill AI Agent template is a **MINIMAL** template to build an AI Agent that can be hosted on Phala Network's decentralized hosting protocol. Unlike Vercel or other FaaS, it allows you to publish your AI Agent compiled code to IPFS and hosts it on a fully decentralized FaaS cloud with the following benefits:
+The AI Agent Contract Viem SDK template is a **MINIMAL** template to build an AI Agent that can be hosted on Phala Network's decentralized hosting protocol. Unlike Vercel or other FaaS, it allows you to publish your AI Agent compiled code to IPFS and hosts it on a fully decentralized FaaS cloud with the following benefits:
 
 - 💨 Ship Fast: Build and ship with familiar toolchain in minutes
 - ⛑️ Secure: Execution guarded by rock solid TEE / Intel SGX
@@ -55,20 +54,6 @@ Create `.env` file with the default ThirdWeb API key for publishing your Agent C
 ```shell
 cp .env.example .env
 ```
-Get an API Key from Redpill
-> **Note**
-> 
-> There is a default RedPill API Key provided in the .env.example file. This API key is rate limited and if you run into an error that displays `Insufficient funds`, reach out to the Phala Team on [discord](https://discord.gg/phala-network).
-
-- Go to https://red-pill.ai/dashboard and claim your API Key by swapping some ETH for wGPT at https://app.uniswap.org/explore/tokens/base/0x74F62Bc1961028C22b8080961c6534f4eDD49D6C
-- Video Tutorial: https://youtu.be/ZoJwbLNhbWE
-
-In [default.json](./secrets/default.json) file replace `YOUR_API_KEY` with your API Key. The default has a rate limit. If you want access to a RedPill code, reach out to the Phala Team.
-```text
-{
-  "apiKey": "YOUR_REDPILL_API_KEY"
-}
-```
 
 Build your Agent
 ```shell
@@ -87,15 +72,18 @@ Now you are ready to publish your agent, add secrets, and interact with your age
 - Set secrets: 'npm run set-secrets'
 - Go to the url produced by setting the secrets (e.g. https://wapo-testnet.phala.network/ipfs/QmPQJD5zv3cYDRM25uGAVjLvXGNyQf9Vonz7rqkQB52Jae?key=b092532592cbd0cf)
 
- ✓ tests/index.test.ts (2) 6157ms
-   ✓ Test RedPill AI Agent Contract (2) 6156ms
-     ✓ GET Test: Pass chatQuery through URL Query 2722ms
-     ✓ POST Test: Pass chatQuery and model through body of POST request 3434ms
+ ✓ tests/index.test.ts (5) 7035ms
+   ✓ Test Viem SDK AI Agent Contract (5) 7035ms
+     ✓ Derive Account
+     ✓ Sign Message Data
+     ✓ Verify Signature
+     ✓ Send TX on Base Sepolia 6991ms
+     ✓ POST /
 
  Test Files  1 passed (1)
-      Tests  2 passed (2)
-   Start at  16:30:03
-   Duration  6.36s (transform 23ms, setup 6ms, collect 31ms, tests 6.16s, environment 0ms, prepare 39ms)
+      Tests  5 passed (5)
+   Start at  16:40:10
+   Duration  7.39s (transform 34ms, setup 6ms, collect 181ms, tests 7.04s, environment 0ms, prepare 42ms)
 ```
 
 ### Publish Your AI Agent
@@ -110,27 +98,25 @@ Upon a successful upload, the command should show the URL to access your AI Agen
 - Uploading file to IPFS. This may take a while depending on file sizes.
 
 ✔ Successfully uploaded file to IPFS.
-✔ Files stored at the following IPFS URI: ipfs://QmaUbZgNz9dZ5eGm87DDqegRtcBV7RdosxizYQcfe2bHRc
-✔ Open this link to view your upload: https://b805a9b72767504353244e0422c2b5f9.ipfscdn.io/ipfs/bafybeifukvkuyztltpq2gi55nswzvwkpgrwrogwykm4ymoqeymh2pxoukm/
+✔ Files stored at the following IPFS URI: ipfs://QmVJ3xknfRevUkc68iZc4RdPSLL2gLD8WagwMQCdGMyC4g
+✔ Open this link to view your upload: https://b805a9b72767504353244e0422c2b5f9.ipfscdn.io/ipfs/bafybeidhk5nzutxyx3xusgjl4v6nkvscdoiowzofc7hqnf3l4xipieshie/
 
-Agent Contract deployed at: https://wapo-testnet.phala.network/ipfs/QmaUbZgNz9dZ5eGm87DDqegRtcBV7RdosxizYQcfe2bHRc
+Agent Contract deployed at: https://wapo-testnet.phala.network/ipfs/QmVJ3xknfRevUkc68iZc4RdPSLL2gLD8WagwMQCdGMyC4g
 
 If your agent requires secrets, ensure to do the following:
 1) Edit the ./secrets/default.json file or create a new JSON file in the ./secrets folder and add your secrets to it.
 2) Run command: 'npm run set-secrets' or 'npm run set-secrets [path-to-json-file]'
-Logs folder created.
 Deployment information updated in ./logs/latestDeployment.json
 ```
 
-
 > :information_source: Note that your latest deployment information will be logged to in file [`./logs/latestDeployment.json`](./logs/latestDeployment.json). This file is updated every time you publish a new Agent Contract to IPFS. This file is also used to get the IPFS CID of your Agent Contract when setting secrets for your Agent Contract.
->
+> 
 > Here is an example:
 > ```json
 > {
->   "date": "2024-08-29T18:47:55.108Z",
->   "cid": "QmaUbZgNz9dZ5eGm87DDqegRtcBV7RdosxizYQcfe2bHRc",
->   "url": "https://wapo-testnet.phala.network/ipfs/QmaUbZgNz9dZ5eGm87DDqegRtcBV7RdosxizYQcfe2bHRc"
+>   "date": "2024-08-29T03:55:04.278Z",
+>   "cid": "Qmb2Mn72sY9h8ew6Ld5bW13Fknzge3hssRetJTUWyyoma7",
+>   "url": "https://wapo-testnet.phala.network/ipfs/Qmb2Mn72sY9h8ew6Ld5bW13Fknzge3hssRetJTUWyyoma7"
 > }
 > ```
 
@@ -140,9 +126,9 @@ We use <a href="https://thirdweb.com/dashboard/infrastructure/storage">thirdweb 
 </details>
 
 > **Did Thirdweb fail to publish?**
->
-> If ThirdWeb fails to publish, please signup for your own ThirdWeb account to publish your Agent Contract to IPFS. Signup or login at https://thirdweb.com/dashboard/
->
+> 
+> If ThirdWeb fails to publish, please signup for your own ThirdWeb account to publish your Agent Contract to IPFS. Signup or login at https://thirdweb.com/dashboard/ 
+> 
 > Whenever you log into ThirdWeb, create a new API key and replace the default API Key with yours in the [.env](./.env) file.
 >
 > ```
@@ -164,11 +150,11 @@ curl https://wapo-testnet.phala.network/ipfs/<your-cid>
 
 By default, all the compiled JS code is visible for anyone to view if they look at IPFS CID. This makes private info like API keys, signer keys, etc. vulnerable to be stolen. To protect devs from leaking keys, we have added a field called `secret` in the `Request` object. It allows you to store secrets in a vault for your AI Agent to access.
 
-To add your secrets,
+To add your secrets, 
 1) Edit the [default.json](./secrets/default.json) file or create a new JSON file in the `./secrets` folder and add your secrets to it.
 ```json
 {
-  "apiKey": "YOUR_REDPILL_API_KEY"
+  "secretSalt": "SALTY_BAE"
 }
 ```
 2) Run command to set the secrets
@@ -183,11 +169,11 @@ Use default secrets...
 Storing secrets...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   199    0    68  100   131    121    234 --:--:-- --:--:-- --:--:--   356
-{"token":"5d9faaed6be5414a","key":"a3a8a4ef2c057d5c","succeed":true}
+100   161    0    68  100    93    130    178 --:--:-- --:--:-- --:--:--   309
+{"token":"1e7c8d07c412ff89","key":"6978ea391960e272","succeed":true}
 
 Secrets set successfully. Go to the URL below to interact with your agent:
-https://wapo-testnet.phala.network/ipfs/QmaUbZgNz9dZ5eGm87DDqegRtcBV7RdosxizYQcfe2bHRc?key=a3a8a4ef2c057d5c
+https://wapo-testnet.phala.network/ipfs/QmVJ3xknfRevUkc68iZc4RdPSLL2gLD8WagwMQCdGMyC4g?key=6978ea391960e272
 Log entry added to secrets.log
 ```
 
@@ -195,23 +181,37 @@ Log entry added to secrets.log
 >
 > Here is an example:
 > ```text
-> 2024-08-29T18:54:16.643Z, CID: [QmaUbZgNz9dZ5eGm87DDqegRtcBV7RdosxizYQcfe2bHRc], Token: [5d9faaed6be5414a], Key: [a3a8a4ef2c057d5c], URL: [https://wapo-testnet.phala.network/ipfs/QmaUbZgNz9dZ5eGm87DDqegRtcBV7RdosxizYQcfe2bHRc?key=a3a8a4ef2c057d5c]
+> 2024-08-28T19:31:07.011Z, CID: [QmYNXZ7tGijMHvweRjcx5vGPjmMBCfqnaBS7AHQDipymqh], Token: [fc908693f43dbe2f], Key: [18ba50e9c1d5822a], URL: [https://wapo-testnet.phala.network/ipfs/QmYNXZ7tGijMHvweRjcx5vGPjmMBCfqnaBS7AHQDipymqh?key=18ba50e9c1d5822a]
+> 2024-08-29T03:22:11.453Z, CID: [QmYNXZ7tGijMHvweRjcx5vGPjmMBCfqnaBS7AHQDipymqh], Token: [d0e96601ea38b6be], Key: [2b5fd724a4de3652], URL: [https://wapo-testnet.phala.network/ipfs/QmYNXZ7tGijMHvweRjcx5vGPjmMBCfqnaBS7AHQDipymqh?key=2b5fd724a4de3652]
+> 2024-08-29T03:37:10.033Z, CID: [QmYNXZ7tGijMHvweRjcx5vGPjmMBCfqnaBS7AHQDipymqh], Token: [ec667a69d0df6653], Key: [63d145b3bddf56b4], URL: [https://wapo-testnet.phala.network/ipfs/QmYNXZ7tGijMHvweRjcx5vGPjmMBCfqnaBS7AHQDipymqh?key=63d145b3bddf56b4]
+> 2024-08-29T03:53:54.735Z, CID: [QmYNXZ7tGijMHvweRjcx5vGPjmMBCfqnaBS7AHQDipymqh], Token: [b9b53656b1e0293b], Key: [31db5184579e3427], URL: [https://wapo-testnet.phala.network/ipfs/QmYNXZ7tGijMHvweRjcx5vGPjmMBCfqnaBS7AHQDipymqh?key=31db5184579e3427]
+> 2024-08-29T03:55:14.959Z, CID: [Qmb2Mn72sY9h8ew6Ld5bW13Fknzge3hssRetJTUWyyoma7], Token: [beb2e71cd4c7997d], Key: [e189f4deee88dcc1], URL: [https://wapo-testnet.phala.network/ipfs/Qmb2Mn72sY9h8ew6Ld5bW13Fknzge3hssRetJTUWyyoma7?key=e189f4deee88dcc1]
 > ```
 
 The API returns a `token` and a `key`. The `key` is the id of your secret. It can be used to specify which secret you are going to pass to your frame. The `token` can be used by the developer to access the raw secret. You should never leak the `token`.
 
-To verify the secret, run the following command where `key` and `token` are replaced with the values from adding your `secret` to the vault.
+<details>
+<summary>To verify the secret</summary>
+Run the following command where `key` and `token` are replaced with the values from adding your `secret` to the vault.
+
 ```shell
 curl https://wapo-testnet.phala.network/vaults/<key>/<token>
 ```
 
 Expected output:
 ```shell
-{"data":{"apiKey":"<REDPILL_API_KEY>"},"succeed":true}
+{"data":{"secretSalt":"<SECRET_SALT>"},"succeed":true}
 ```
 
+If you are using secrets, make sure that your URL is set in the following syntax where `cid` is the IPFS CID of your compiled JS file and `key` is the `key` from adding secrets to your vault.
+```text
+https://wapo-testnet.phala.network/ipfs/<cid>?key=<key>
+```
+
+</details>
+
 #### Accessing Secrets in Your Code
-To access your secrets you will have to get them from secret `vault` via `process.env.secret`. Here is an example of accessing the secret key value of `apiKey`.
+To access your secrets you will have to get them from secret `vault` via `process.env.secret`. Here is an example of accessing the secret key value of `secretSalt`.
 ```typescript
 let vault: Record<string, string> = {}
 try {
@@ -220,8 +220,14 @@ try {
   console.error(e)
   return c.json({ error: "Failed to parse secrets" })
 }
-const apiKey = (vault.apiKey) ? vault.apiKey as string : 'SALTY_BAE'
+const secretSalt = (vault.secretSalt) ? vault.secretSalt as string : 'SALTY_BAE'
 ```
+
+#### Example:
+- [Derived ECDSA Key](https://wapo-testnet.phala.network/ipfs/QmVJ3xknfRevUkc68iZc4RdPSLL2gLD8WagwMQCdGMyC4g?key=6978ea391960e272)
+- [Sign 'signedByTEE'](https://wapo-testnet.phala.network/ipfs/QmVJ3xknfRevUkc68iZc4RdPSLL2gLD8WagwMQCdGMyC4g?key=6978ea391960e272&type=sign&data=signedByTEE)
+- [Verify Signature](https://wapo-testnet.phala.network/ipfs/QmVJ3xknfRevUkc68iZc4RdPSLL2gLD8WagwMQCdGMyC4g?key=6978ea391960e272&type=verify&data=signedByTEE&signature=0x9b1b413f1573da2ada426f4da99416b6081ef7246a23990c0c13d764f566083920a4b07636b7d7a582fbc3d98ad42bedc26410764a4cd2963058792121a5d63d1b)
+- [Send TX on Base Sepolia](https://wapo-testnet.phala.network/ipfs/QmVJ3xknfRevUkc68iZc4RdPSLL2gLD8WagwMQCdGMyC4g?key=6978ea391960e272&type=sendTx&to=0xC5227Cb20493b97bb02fADb20360fe28F52E2eff&gweiAmount=420)
 
 ### Handling Requests
 Check the [`Hono` docs](https://hono.dev/docs) for information on accessing URL `queries` or `body` from a `post` request.
@@ -270,12 +276,14 @@ console.error('error log message!')
 ```
 For more information check the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/console) on `console` object.
 
-### Getting Rugged By The WiFi?!
+### Getting Rugged By The WiFi?! 
 Run a local testnet with [`docker` support](https://docs.docker.com/desktop/). All you need to do to get a local testnet started is run:
+
 > **WARNING**
->
+> 
 > Running the local testnet may return an error if port `8000` is already in use.
 
+ 
 ```shell
 npm run dev
 ```

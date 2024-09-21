@@ -1,81 +1,78 @@
-# Turborepo starter
+<div align="center">
+<h1>Izanami</h1>
 
-This is an official starter Turborepo.
+<p>A Social Reputation Tool</p>
 
-## Using this example
+<img src="./icon.png" width="50%" height="50%"></img>
 
-Run the following command:
+[![](https://img.shields.io/github/license/hollow-leaf/Izanami)](./LICENSE)
+</div>
 
-```sh
-npx create-turbo@latest
-```
+### **ShowCase**
+- Website: [Website URL](https://)
+- Flow Testnet: [0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2]()
 
-## What's inside?
+### **What is Izanami?**
 
-This Turborepo includes the following packages/apps:
+Izanami is an innovative address analysis tool that combines AI and community-driven insights. It helps you evaluate and understand social interactions with ease and precision.
 
-### Apps and Packages
+Using a large language model (LLM), users are grouped into categories based on multiple dimensions. All data, including evaluations and historical information, is securely stored on the blockchain and encrypted. Only the user can decrypt their identity, while group voting enables users to engage in discussions or decisions with a unique social persona. This persona, verified and recognized by the community, may change after each social interaction.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+The system allows users to express different aspects of their personality in various social contexts. For example, an introverted person who actively votes in an outdoor activity might have their vote carry more weight. Conversely, an extrovert contributing to solitary challenges can demonstrate the tool’s value.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Overall, Izanami provides a way for users to showcase multiple facets of their personality in different social scenarios, all within a secure and decentralized framework.
 
-### Utilities
+---
 
-This Turborepo has some additional tools already setup for you:
+### **Problem Statement**
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Overwhelming number of airdrops and interactions on social networks.
+- Difficulty in assessing the credibility and behavior of various addresses.
+- Lack of personalized insights into individual actions.
 
-### Build
+### **Project Solution**
 
-To build all apps and packages, run the following command:
+- Izanami: A Chrome extension for evaluating addresses on social networks.
+- Provides both AI and human evaluations of interactions.
+- Helps users make informed decisions based on comprehensive reviews.
 
-```
-cd my-turborepo
-pnpm build
-```
+### **Deployed Contract**
+- Flow Testnet: [0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2](https://testnetscan.nerochain.io/address/0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2/contracts#address-tabs)
 
-### Develop
+## **Using Izanami**
 
-To develop all apps and packages, run the following command:
+#### Apps and Packages
 
-```
-cd my-turborepo
-pnpm dev
-```
+**apps/extension**
+- A Chrome extension for evaluating addresses on social networks.
+- Provides real-time AI and community-driven evaluations of interactions.
 
-### Remote Caching
+**apps/phana-ai**
+- An AI agent contract template with RedPill.
+- Host your AI Agent Contract on Phala's decentralized serverless cloud.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+**apps/serverless**
+- Serverless functions to support the backend operations of Izanami.
+- Includes APIs for creating and rating DIDs, and retrieving results.
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+**apps/update-host**
+- A service to host and update the Izanami application.
+- Provides endpoints for managing and updating the application.
 
-```
-cd my-turborepo
-npx turbo login
-```
+**packages/contract**
+- Smart contracts for managing reputation scores on the blockchain.
+- Includes contracts for rating and evaluating addresses.
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### **Key Features**
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+- **AI Evaluations:** Automated, unbiased assessments of addresses.
+- **Community-Driven Reviews:** Insights and feedback from the community.
+- **Personalized Insights:** Tailored evaluations based on individual behavior.
+- **User-Friendly Interface:** Easy to use and integrate with social networks.
 
-```
-npx turbo link
-```
+### **Competitive Advantage**
 
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- **Comprehensive Evaluations:** Combines AI and community insights.
+- **Personalization:** Understands and adapts to individual user behavior.
+- **Transparency:** Clear and detailed evaluations for better decision-making.
+- **Community-Driven:** Leverages the power of user reviews and feedback.

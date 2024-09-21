@@ -9,7 +9,9 @@ describe('Test RedPill AI Agent Contract', () => {
   test('GET Test: Pass chatQuery through URL Query', async () => {
     let chatQuery = 'Who are you?'
     let model = 'o1-preview'
-    const resp = await app.request(encodeURI(`/?chatQuery=${chatQuery}&model=${model}`))
+    let address = "0c9Fb4D7dCB0214Cd64915664e905022a1152d34"
+
+    const resp = await app.request(encodeURI(`/?data=${chatQuery}&address=${address}&model=${model}`))
     expect(resp.status).toBe(200)
     expect(resp.headers.get('content-type')?.toLowerCase()).toBe('application/json; charset=utf-8')
     const data = await resp.json()
@@ -20,11 +22,12 @@ describe('Test RedPill AI Agent Contract', () => {
   })
 
   test('POST Test: Pass chatQuery and model through body of POST request', async () => {
-    const input = { chatQuery: 'What is FooBar?', model: 'gpt-4o' }
+    const input = { data: 'What is FooBar?', address: '0x0c9Fb4D7dCB0214Cd64915664e905022a1152d34q', model: 'gpt-4o' }
     const resp = await app.request('/', {
       method: 'POST',
       body: JSON.stringify(input),
     })
+    console.log(resp) 
     expect(resp.status).toBe(200)
     expect(resp.headers.get('content-type')?.toLowerCase()).toBe('application/json; charset=utf-8')
     const data = await resp.json()

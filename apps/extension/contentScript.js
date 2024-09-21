@@ -21,9 +21,20 @@ function fetchAndReplaceTweets() {
           })
           console.log(res)
           if(res.verificationStatus.status != "notfound") {
-            insertSuspiciousTagWithStyle(tweetTextElement)
+            const good = Number(res.verificationStatus.Good)
+            const bad = Number(res.verificationStatus.Bad)
+            console.log(good, bad)
+            if(good + bad < 100) {
+              insertUncertainTagWithStyle(tweetTextElement)
+            } else {
+              if(good > bad) {
+                insertGoodTagWithStyle(tweetTextElement)
+              } else {
+                insertSuspiciousTagWithStyle(tweetTextElement)
+              }
+            }
           } else {
-            insertGoodTagWithStyle(tweetTextElement)
+            insertUncertainTagWithStyle(tweetTextElement)
           }
         }
       }
@@ -54,8 +65,33 @@ async function insertSuspiciousTagWithStyle(tweetTextElement) {
 
     //const status = await getAddressStatus(ethereumAddress)
     // Modify the Ethereum address by adding '0x--' and insert "suspicious address!!" in bold and red color after the address
-    const modifiedAddress = `<p style="color: red;">${"0X" + ethereumAddress.slice(2)}</p>`
+    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} style="color: red;">${"0X" + ethereumAddress.slice(2)}</a>`
     const suspiciousTag = ' <strong style="color: red;">Suspicious Address!!</strong>';
+
+    // Address found, insert "suspicious address!!" with red color and bold right after the Ethereum address
+    const edited = content.replace(ethereumAddressRegex, modifiedAddress + suspiciousTag);
+    tweetTextElement.innerHTML = edited
+    return ethereumAddress
+  }
+
+  // No address found, return original content
+  return
+}
+
+async function insertUncertainTagWithStyle(tweetTextElement) {
+
+  const content = tweetTextElement.textContent
+
+  const ethereumAddressRegex = /0x[a-fA-F0-9]{40}/;
+  const match = content.match(ethereumAddressRegex);
+
+  if (match) {
+    const ethereumAddress = match[0];
+
+    //const status = await getAddressStatus(ethereumAddress)
+    // Modify the Ethereum address by adding '0x--' and insert "suspicious address!!" in bold and red color after the address
+    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} style="color: gray;">${"0X" + ethereumAddress.slice(2)}</a>`
+    const suspiciousTag = ' <strong style="color: gray;">Uncertain Address?!</strong>';
 
     // Address found, insert "suspicious address!!" with red color and bold right after the Ethereum address
     const edited = content.replace(ethereumAddressRegex, modifiedAddress + suspiciousTag);
@@ -79,8 +115,8 @@ async function insertGoodTagWithStyle(tweetTextElement) {
 
     //const status = await getAddressStatus(ethereumAddress)
     // Modify the Ethereum address by adding '0x--' and insert "suspicious address!!" in bold and red color after the address
-    const modifiedAddress = `<a href="https://www.semrush.com/" style="color: green;">${"0X" + ethereumAddress.slice(2)}</a>`
-    const suspiciousTag = ' <a style="color: green;">Verified Address<img src="https://develop.gen3-ui-v1.pages.dev/icons/FireIcon.svg"/></a>';
+    const modifiedAddress = `<a href=https://izanami.pages.dev?address=${ethereumAddress} style="color: green;">${"0X" + ethereumAddress.slice(2)}</a>`
+    const suspiciousTag = ' <a style="color: green;">Reliable Address<img src="https://develop.gen3-ui-v1.pages.dev/icons/FireIcon.svg"/></a>';
 
     // Address found, insert "suspicious address!!" with red color and bold right after the Ethereum address
     const edited = content.replace(ethereumAddressRegex, modifiedAddress + suspiciousTag);

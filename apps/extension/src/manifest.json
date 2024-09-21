@@ -8,6 +8,11 @@
     "96": "icon/96.png",
     "128": "icon/128.png"
   },
+  "permissions": [
+    "activeTab", 
+    "scripting",
+    "storage"
+  ],
   "{{chrome}}.action": {
     "default_popup": "src/popup.html"
   },
@@ -17,5 +22,11 @@
   "background": {
     "{{chrome}}.service_worker": "src/background.ts",
     "{{firefox}}.scripts": ["src/background.ts"]
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
 }

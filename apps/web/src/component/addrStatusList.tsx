@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getAddrStatus } from "../services/api"
+import { useLocation } from 'react-router-dom';
 
 export type addressDetail = {
     address: string
@@ -10,6 +11,12 @@ export type addressDetail = {
 
 export function AddrStatusList() {
 
+    const location = useLocation();
+
+    // Use URLSearchParams to extract query parameters
+    const searchParams = new URLSearchParams(location.search);
+    const address = searchParams.get('address');
+
     const [addrStatus, setAddrStatus] = useState<{"address": string, "status": string}[]>([])
 
     useEffect(() => {
@@ -19,7 +26,19 @@ export function AddrStatusList() {
     async function init() {
         const res = await getAddrStatus()
         console.log(res)
-        setAddrStatus(res.result)
+        if(address) {
+            console.log(address)
+            let t: boolean = false
+            res.result.map((a) => {
+                if(a.address == address) {
+                    setAddrStatus([a])
+                    t = true
+                } 
+            })
+            if(!t) setAddrStatus(res.result)
+        } else {
+            setAddrStatus(res.result)
+        }
     }
 
     return (

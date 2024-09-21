@@ -12,7 +12,7 @@
 - Website: [Izanami](https://izanami.pages.dev)
 - Flow Testnet: [0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2](https://evm-testnet.flowscan.io/address/0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2?tab=contract)
 - Chrome Extension: `pnpm run build --filter extension`
-- Phana Ai: https://wapo-testnet.phala.network/ipfs/QmW5ddBNgH6y6NCbgcKQDMDBvW2x2gyhutKBR1eVQEXq7A?key=710555c9bbad46e6
+- Phana Ai: https://wapo-testnet.phala.network/ipfs/QmW5ddBNgH6y6NCbgcKQDMDBvW2x2gyhutKBR1eVQEXq7A?key=2342b0ccac844129&address=0xe3a6b8Da8932354592E7F3f6199b82D6E2bdBDb2
 
 ### **What is Izanami?**
 
